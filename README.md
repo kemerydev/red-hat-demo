@@ -8,7 +8,7 @@ Elements of pages which are common to multiple areas (such menu bars) are given 
 XPath element locators are coded in class methods, which interact with the website.<br />
 
 <ul><b>Prerequisites:</b>
-<li>Ruby with Rubygems (see Gemfile)</li>
+<li>Ruby 2.2.1 or newer with Rubygems</li>
 <li>Bundler (gem install bundler)</li>
 <li>Selenium ChromeDriver<ul>
   <li>downloaded from http://chromedriver.storage.googleapis.com/</li>
