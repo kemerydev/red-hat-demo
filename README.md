@@ -7,7 +7,7 @@ Rake tasks are used to launch Cucumber, which in turn allows Ruby step definitio
 Elements of pages which are common to multiple areas (such menu bars) are given their own class.<br />
 XPath element locators are coded in class methods, which interact with the website.<br />
 
-<ul>Prerequisites:
+<ul><b>Prerequisites:</b>
 <li>Bundler</li>
 <li>Ruby, Rubygems (see Gemfile for other dependencies)</li>
 <li>Selenium ChromeDriver<ul>
