@@ -10,5 +10,7 @@ XPath element locators are coded in class methods, which interact with the websi
 <ul>Prerequisites:
 <li>Bundler</li>
 <li>Ruby, Rubygems (see Gemfile for other dependencies)</li>
-<li>Selenium ChromeDriver: http://chromedriver.storage.googleapis.com/</li>
+<li>Selenium ChromeDriver<ul>
+  <li>downloaded from http://chromedriver.storage.googleapis.com/</li>
+  <li>path to file system location is set in /features/support/env.rb:7</li></ul>
 </ul>
