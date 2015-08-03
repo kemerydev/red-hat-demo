@@ -1,5 +1,4 @@
-Object-oriented Ruby Selenium automation demo for Red Hat
-Kevin R. Emery, Jul 2015
+Object-oriented Ruby Selenium automation demo for Red Hat by Kevin R. Emery, Jul 2015
 
 Rake tasks are used to launch Cucumber, which is used as the test runner.
 Cucumber allows Ruby step definitions within the .feature file(s) to be called from other features.
