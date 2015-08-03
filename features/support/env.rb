@@ -5,7 +5,7 @@ require 'date'
 Before('@initial') do
   # The latest chromedriver can be downloaded from http://chromedriver.storage.googleapis.com/index.html
   Selenium::WebDriver::Chrome.driver_path = "/Users/mollybeaver/Kevin/selenium_demo/chromedriver"
-  #Selenium::WebDriver::Chrome.driver_path = "/path/to/selenium_demo/chromedriver"
+  #Selenium::WebDriver::Chrome.driver_path = "/path/to/chromedriver"
 
   $red_hat_url = 'http://www.redhat.com/en'
 
