@@ -2,6 +2,7 @@ module MenuLinksSteps
   require 'rspec'
   require 'gherkin'
   require './helpers/performance'
+  require './page_classes/pages/landing_page'
   require './page_classes/elements/primary_nav_menu'
   require './page_classes/elements/secondary_top_menu'
 end
@@ -11,6 +12,10 @@ World(MenuLinksSteps)
 Given(/^a public user navigates to the Red Hat homepage at (.+)$/) do |red_hat_spec_url|
   red_hat_spec_url.eql?($red_hat_url).should == true
   $driver.get $red_hat_url
+end
+
+Then(/^at least (\d+) (.+) button should be visible$/) do |num_buttons, button_text|
+  LandingPage.check_buttons(num_buttons, button_text)
 end
 
 Then(/^the primary menu links should be visible$/) do
@@ -48,9 +53,4 @@ Given(/^a user clicks (.+) in the primary nav menu then the browser should redir
     $driver.get($red_hat_url)
     $wait.until { $driver.execute_script('return document.readyState').eql?('complete') }
   end
-end
-
-Then(/^close the browser after the test$/) do
-  puts 'closing browser...'
-  # browser is closed in env.rb by the @final hook
 end

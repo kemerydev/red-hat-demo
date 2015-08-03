@@ -3,7 +3,8 @@ Feature: Menu links at the Red Hat homepage
   @initial
   Scenario: Open the Red Hat homepage
     Given a public user navigates to the Red Hat homepage at http://www.redhat.com/en
-    Then the primary menu links should be visible
+    Then at least 1 Learn more button should be visible
+    And the primary menu links should be visible
     And the secondary top nav menu should be visible
 
   Scenario Outline: Clicking top-level links of the top navigation menu
@@ -24,7 +25,7 @@ Feature: Menu links at the Red Hat homepage
         | Success stories    |
         | About Red Hat      |
 
-    # a more thorough regression check would look like this
+    # a more thorough regression check
     Scenario Outline: Primary navigation - child links
       Given the user clicks to open the <MenuName> option from the primary nav menu
       Then the <ColumnName> column header should be displayed in the primary nav menu
@@ -58,7 +59,3 @@ Feature: Menu links at the Red Hat homepage
         | /success-stories/adobe                         | Success stories    | Customers       | Adobe                                   |
         | /about                                         | About Red Hat      | Red Hat         | Red Hat                                 |
         | about/company                                  | About Red Hat      | Red Hat         | Company information                     |
-
-#  @final
-#  Scenario: close the browser
-#    Then close the browser after the test

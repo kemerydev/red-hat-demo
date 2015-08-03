@@ -18,23 +18,14 @@ Before('@initial') do
   $driver.manage.window.resize_to(max_width, max_height)
 
   current_time = DateTime.now
-  #logfilename = current_time.strftime('%d-%m-%Y_%H:%M').concat('.log')
-  logfilename = 'standard.log'
-  logfile = File.new(logfilename, 'w')
-  $logger = Logger.new(logfile)
-  $logger.datetime_format = "H:%M:%S"
-  $logger.formatter = proc do |severity, datetime, progname, msg|
+  performance_log_filename = './logs/' + current_time.strftime('%d-%m-%Y_%H:%M').concat('_performance').concat('.log')
+  #performance_log_filename = 'performance.log'
+  performance_log = File.new(performance_log_filename, 'w')
+  $performance_logger = Logger.new(performance_log)
+  $performance_logger.datetime_format = "H:%M:%S"
+  $performance_logger.formatter = proc do |severity, datetime, progname, msg|
     "[#{datetime}] #{msg}\n"
   end
-
-  #performance_log_filename = current_time.strftime('%d-%m-%Y_%H:%M').concat('_performance').concat('.log')
-  performance_log_filename = 'performance.log'
-  $performance_log = File.new(performance_log_filename, 'w')
-  #$performance_logger = Logger.new(performance_log)
-  #$performance_logger.datetime_format = "H:%M:%S"
-  #$performance_logger.formatter = proc do |severity, datetime, progname, msg|
-  #  "[#{datetime}] #{msg}\n"
-  #end
 end
 
 After('@final') do

@@ -36,4 +36,26 @@ class SecondaryTopMenu
     link_element.attribute('href').include?(redirection_uri).should == true
     return link_element
   end
+
+  def self.open_search_menu
+    expand_search_element = $driver.find_element(:xpath => @expand_search_xpath)
+    expand_search_element.click
+    sleep 1
+  end
+
+  def self.enter_search_text(text)
+    @search_field_xpath = "//form[contains(@class,'search-form')]/descendant::input[1]"
+    search_field = $driver.find_element(:xpath => @search_field_xpath)
+    Validation.visible?(search_field).should == true
+
+    $driver.action.click(search_field).send_keys(text).perform
+  end
+
+  def self.check_and_return_search_button
+    @search_button_xpath = "//input[@type='submit' and @value='Search']"
+    search_button = $driver.find_element(:xpath => @search_button_xpath)
+    Validation.visible?(search_button).should == true
+    return search_button
+  end
+
 end

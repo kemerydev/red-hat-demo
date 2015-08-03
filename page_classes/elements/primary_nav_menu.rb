@@ -62,6 +62,7 @@ class PrimaryNavMenu
   def self.check_column_header(header_link_text)
     # relative locators like this enforce the page structure and cause tests to fail if page structure changes. wildcards (*) can be used when a tag type may change (e.g. h2 to h3)
     # contains() should always be used when locating by the class attribute in case additional classes are added to the element
+    sleep 0.2
     column_header_xpath = "//div[contains(@class,'menu-items')]/descendant::*[contains(@class,'menu')]/preceding-sibling::*/descendant::a[contains(.,'#{header_link_text}')]"
     column_header = $driver.find_element(:xpath => column_header_xpath)
     Validation.visible?(column_header).should == true

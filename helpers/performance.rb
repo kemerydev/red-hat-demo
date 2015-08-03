@@ -6,8 +6,8 @@ class Performance
     elapsed = Time.now - start
 
     $driver.current_url.include?(expected_uri).should == true
-    $performance_log.puts(elapsed.round(3).to_s + ' to load ' + expected_uri)
-    #$performance_logger.info(elapsed.round(2).to_s + ' to load ' + expected_uri)
+    $performance_logger.info(elapsed.round(3).to_s + 's to load ' + expected_uri)
+    sleep 0.2
     return elapsed
   end
 end
